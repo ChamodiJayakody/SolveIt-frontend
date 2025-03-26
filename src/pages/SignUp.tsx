@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,6 +11,7 @@ function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignUp = async () => {
     if (!firstname || !lastname || !fullname || !email || !password) {
@@ -19,7 +21,7 @@ function SignUp() {
 
     setLoading(true);
     try {
-      await axios.post('/api/userService/auth/signup', {
+      await axios.post('http://localhost:3000/api/userService/auth/signup', {
         firstname,
         lastname,
         fullname,
@@ -27,6 +29,7 @@ function SignUp() {
         password,
       });
       toast.success('Signup successful');
+      navigate('/sign-in'); // Navigate to sign-in page on successful sign-up
     } catch (error: unknown) {
       if (axios.isAxiosError(error) && error.response) {
         toast.error('Signup failed: ' + error.response.data.message);

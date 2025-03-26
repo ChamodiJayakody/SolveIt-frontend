@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
 
 function SignIn() {
@@ -9,14 +10,16 @@ function SignIn() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSignIn = async () => {
     setLoading(true);
     setError('');
     dispatch(signInStart());
     try {
-      const response = await axios.post('/api/userService/auth/signin', { email, password });
+      const response = await axios.post('http://localhost:3000/api/userService/auth/signin', { email, password });
       dispatch(signInSuccess(response.data));
+      navigate('/'); // Navigate to home page on successful sign-in
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         setError(error.response.data.message || 'An error occurred');

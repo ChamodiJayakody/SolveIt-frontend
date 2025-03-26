@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const TicketForm = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ const TicketForm = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,8 +30,9 @@ const TicketForm = () => {
     setLoading(true);
     setError('');
     try {
-      await axios.post('/api/issueService/create-issue', formData);
+      await axios.post('http://localhost:3001/api/issueService/create-issue', formData);
       alert('Ticket created successfully');
+      navigate('/tickets'); // Navigate to tickets page on successful issue creation
     } catch (error) {
       setError('Failed to create ticket');
     } finally {

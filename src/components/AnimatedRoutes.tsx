@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import TicketForm from '../components/TicketForm';
+import Tickets from '../pages/Tickets';
+import Profile from '../pages/Profile';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -14,6 +16,8 @@ function AnimatedRoutes() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/create-ticket" element={<TicketForm />} />
+        <Route path="/tickets" element={<Tickets />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </AnimatePresence>
   );
