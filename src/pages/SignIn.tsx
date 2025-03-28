@@ -34,26 +34,28 @@ function SignIn() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-4 border rounded shadow-md">
-      <h2 className="text-2xl mb-4">Sign In</h2>
+    <div className="max-w-sm mx-auto mt-36 p-4 ring-2 ring-teal-400 rounded-2xl  bg-white hover:shadow-2xl shadow-md">
+      <div className="flex justify-center"><h2 className="text-2xl mb-4">Sign In</h2></div>
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4  rounded-2xl"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4  rounded-2xl"
       />
-      <button onClick={handleSignIn} className="w-full bg-blue-600 text-white p-2 rounded" disabled={loading}>
+      <div className="flex justify-center">
+      <button onClick={handleSignIn} className="w-32 bg-teal-800 hover:bg-teal-500 text-white font-medium p-2 rounded-2xl" disabled={loading}>
         {loading ? 'Signing In...' : 'Sign In'}
       </button>
+      </div>
     </div>
   );
 }

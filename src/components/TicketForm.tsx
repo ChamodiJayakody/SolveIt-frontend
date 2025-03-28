@@ -41,20 +41,20 @@ const TicketForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-2 p-4 border rounded shadow-md">
-      <h2 className="text-2xl mb-4">Create Ticket</h2>
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-4 p-4 ring-2 ring-teal-400 rounded-2xl  bg-white hover:shadow-2xl shadow-md">
+      <div className="flex justify-center"><h2 className="text-2xl mb-4">Create Ticket</h2></div>
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <div className="mb-4">
         <label className="block mb-1">Title</label>
-        <input name="title" placeholder="Title" onChange={handleChange} className="w-full p-2 border rounded" required />
+        <input name="title" placeholder="Title" onChange={handleChange} className="w-full p-2 border rounded-xl" required />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Description</label>
-        <textarea name="description" placeholder="Description" onChange={handleChange} className="w-full p-2 border rounded" required />
+        <textarea name="description" placeholder="Description" onChange={handleChange} className="w-full p-2 border rounded-xl" required />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Status</label>
-        <select name="status" onChange={handleChange} className="w-full p-2 border rounded" required>
+        <select name="status" onChange={handleChange} className="w-full p-2 border rounded-xl" required>
           <option value="">Select Status</option>
           <option value="open">Open</option>
           <option value="in-progress">In Progress</option>
@@ -63,7 +63,7 @@ const TicketForm = () => {
       </div>
       <div className="mb-4">
         <label className="block mb-1">Priority</label>
-        <select name="priority" onChange={handleChange} className="w-full p-2 border rounded" required>
+        <select name="priority" onChange={handleChange} className="w-full p-2 border rounded-xl" required>
           <option value="">Select Priority</option>
           <option value="low">Low</option>
           <option value="medium">Medium</option>
@@ -72,7 +72,7 @@ const TicketForm = () => {
       </div>
       <div className="mb-4">
         <label className="block mb-1">Type</label>
-        <select name="type" onChange={handleChange} className="w-full p-2 border rounded" required>
+        <select name="type" onChange={handleChange} className="w-full p-2 border rounded-xl" required>
           <option value="">Select Type</option>
           <option value="bug">Bug</option>
           <option value="feature">Feature</option>
@@ -81,31 +81,33 @@ const TicketForm = () => {
       </div>
       <div className="mb-4">
         <label className="block mb-1">Department</label>
-        <input name="department" placeholder="Department" onChange={handleChange} className="w-full p-2 border rounded" required />
+        <input name="department" placeholder="Department" onChange={handleChange} className="w-full p-2 border rounded-xl" required />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Reported By</label>
-        <input name="reportedby" placeholder="Reported By" onChange={handleChange} className="w-full p-2 border rounded" required />
+        <input name="reportedby" placeholder="Reported By" onChange={handleChange} className="w-full p-2 border rounded-xl" required />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Assigned To</label>
-        <input name="assignedto" placeholder="Assigned To" onChange={handleChange} className="w-full p-2 border rounded" required />
+        <input name="assignedto" placeholder="Assigned To" onChange={handleChange} className="w-full p-2 border rounded-xl" required />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Attachments</label>
-        <input name="attachments" placeholder="Attachments" onChange={handleChange} className="w-full p-2 border rounded" />
+        <input name="attachments" placeholder="Attachments" onChange={handleChange} className="w-full p-2 border rounded-xl" />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Tags</label>
-        <input name="tags" placeholder="Tags" onChange={handleChange} className="w-full p-2 border rounded" />
+        <input name="tags" placeholder="Tags" onChange={handleChange} className="w-full p-2 border rounded-xl" />
       </div>
       <div className="mb-4">
         <label className="block mb-1">Comments</label>
-        <textarea name="comments" placeholder="Comments" onChange={handleChange} className="w-full p-2 border rounded" />
+        <textarea name="comments" placeholder="Comments" onChange={handleChange} className="w-full p-2 border rounded-xl" />
       </div>
-      <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded" disabled={loading}>
+      <div className="flex justify-center">
+      <button type="submit" className="w-32 bg-teal-800 hover:bg-teal-500 text-white font-medium p-2 rounded-2xl" disabled={loading}>
         {loading ? 'Creating...' : 'Create Ticket'}
       </button>
+      </div>
     </form>
   );
 };

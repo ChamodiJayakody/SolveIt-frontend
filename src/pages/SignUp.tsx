@@ -42,46 +42,52 @@ function SignUp() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-4 border rounded shadow-md">
-      <h2 className="text-2xl mb-4">Sign Up</h2>
+    <div className="max-w-sm mx-auto mt-14 p-4 ring-2 ring-teal-400 rounded-2xl  bg-white hover:shadow-2xl shadow-md">
+      <div className="flex justify-center"><h2 className="text-2xl mb-4 ">Sign Up</h2></div>
       <input
         type="text"
         placeholder="First Name"
         value={firstname}
         onChange={(e) => setFirstname(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4 border rounded-2xl"
       />
       <input
         type="text"
         placeholder="Last Name"
         value={lastname}
         onChange={(e) => setLastname(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4 border rounded-2xl"
       />
       <input
         type="text"
         placeholder="Full Name"
         value={fullname}
         onChange={(e) => setFullname(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4 border rounded-2xl"
       />
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4 border rounded-2xl"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="w-full p-2 mb-4 border rounded"
+        className="w-full p-2 mb-4 border rounded-2xl"
       />
-      <button onClick={handleSignUp} className="w-full bg-blue-600 text-white p-2 rounded" disabled={loading}>
+      <div className="flex justify-center">
+      <button
+        onClick={handleSignUp}
+        className="w-32 bg-teal-800 hover:bg-teal-500 text-white font-medium p-2 rounded-2xl"
+        disabled={loading}
+      >
         {loading ? 'Signing Up...' : 'Sign Up'}
       </button>
+    </div>
     </div>
   );
 }

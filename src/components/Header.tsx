@@ -23,10 +23,9 @@ function Header() {
   return (
     <header className="bg-white text-black p-4 shadow-md z-10">
       <nav className="flex justify-between items-center">
+        <div className='flex justify-items-start'>
         <div className="text-3xl font-semibold text-teal-500">Solve</div>
         <div className="text-3xl font-bold text-gray-700">IT</div>
-        <div className="flex-1 flex justify-center">
-          <Link to="/" className="hover:text-teal-500 font-medium text-xl">Home</Link>
         </div>
         <div className="space-x-4 flex items-center">
           {!currentUser && <Link to="/sign-in" className="hover:text-teal-500 font-medium text-xl">Sign In</Link>}
@@ -49,7 +48,7 @@ function Header() {
                     <p className="font-semibold">{currentUser.fullname}</p>
                     <p className="text-sm text-gray-600">{currentUser.email}</p>
                   </div>
-                  <Link to="/profile" className="block px-4 py-2 hover:bg-gray-200">Profile</Link>
+                  
                   <button onClick={handleSignOut} className="block w-full text-left px-4 py-2 hover:bg-gray-200">
                     Sign Out
                   </button>
