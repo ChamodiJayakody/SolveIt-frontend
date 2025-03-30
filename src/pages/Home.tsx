@@ -8,7 +8,7 @@ function Home() {
     <div className="flex flex-col mt-24 h-full text-center text-white">
       <h1 className="text-5xl font-extrabold leading-tight sm:text-6xl">
             Track, Manage, and Solve Issues with{" "}
-            <span className="text-yellow-400">SolveIt</span>
+            <span className="text-yellow-300">SolveIt</span>
           </h1>
       <p className="text-xl m-8">A modern issue tracking system designed for seamless collaboration,
       efficiency, and rapid resolution.</p>
